@@ -2,6 +2,10 @@
 
 This is a simple console encrypted messenger. It useses asynchronous key exchange. The RSA encryption library is used to generate the keys as well as encrypt and decrypt the messages.
 
+## Run
+
+To run the program just run the executable `./dist/SecureChat.exe`.
+
 ## Packages:
 import tkinter: Used for GUI.
 
