@@ -10,12 +10,8 @@ import threading
 import rsa
 publicKey, prviateKey = rsa.newkeys(1024)
 
-# get ipv4 address saved in .env file and set port
-import os
-from dotenv import load_dotenv
-load_dotenv()
-ipAddress = os.getenv('ipv4')
-port = 9999
+ipAddress = None
+port = None
 publicPartner = None
 
 def startGui(clientSocket):
@@ -122,12 +118,12 @@ def networkGUI():
 
     tk.Label(setupWindow, text = "IP Address:", bg = "#2B2B2B", fg = "white").pack(pady = 5)
     ipEntry = tk.Entry(setupWindow)
-    ipEntry.insert(0, ipAddress)
+    ipEntry.insert(0, "")
     ipEntry.pack(pady=5)
 
     tk.Label(setupWindow, text = "Port:", bg = "#2B2B2B", fg = "white").pack(pady = 5)
     portEntry = tk.Entry(setupWindow)
-    portEntry.insert(0, str(port))  
+    portEntry.insert(0, "")  
     portEntry.pack(pady = 5)
 
     connectButton = tk.Button(setupWindow, text = "Connect", command = connect, bg = "#2E8B57", fg = "white")
